@@ -1,8 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule,
+        MatCheckboxModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule,
+        MatCardModule,
+      } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,13 +19,15 @@ import { CoreModule } from './core/core.module';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 import { VehicleManagementComponent } from './vehicle-management/vehicle-management.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     HomeComponent,
-    VehicleManagementComponent
+    VehicleManagementComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +36,10 @@ import { VehicleManagementComponent } from './vehicle-management/vehicle-managem
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
