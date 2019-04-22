@@ -1,0 +1,27 @@
+<!-- Calling FacebookAuth Api from AuthService -->
+<div class="sign-in">
+  <div class="sign-in__container">
+      <div class="sign-in__brand-name">
+        <div class="mat-display-3">
+            GreenCar
+        </div>
+        <p style="color: grey">
+          Welcome, please sign in with your facebook account to start.
+        </p>
+        <div style="display: flex; justify-content: center; width: 100%; margin-top: 4rem;">
+            <img 
+            src="assets/images/greencar_logo.jpg" 
+            alt="triangle with all three sides equal"
+            height="150px"
+            width="150px" />
+          </div>
+      </div>
+      
+      <div class="sign-in__options">
+        
+          <button mat-raised-button color="accent" style="font-size: 1.8rem;height: 4rem;" (click)="authService.FacebookAuth()">
+              Sign in with Facebook
+          </button>
+      </div>
+  </div>
+</div>
