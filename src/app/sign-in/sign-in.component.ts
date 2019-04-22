@@ -19,7 +19,7 @@ export class SignInComponent implements OnInit {
           id: authData.data.additionalUserInfo.profile.id,
           first_name: authData.data.additionalUserInfo.profile.first_name,
           last_name: authData.data.additionalUserInfo.profile.last_name,
-          full_name: authData.data.additionalUserInfo.profile.last_name,
+          full_name: authData.data.additionalUserInfo.profile.name,
           photo: authData.data.additionalUserInfo.profile.picture.data.url,
           email: authData.data.additionalUserInfo.profile.email
         };
@@ -34,6 +34,8 @@ export class SignInComponent implements OnInit {
     const isRegisteredUser = await this.userService.userExist(user.id);
     if (!isRegisteredUser) {
       this.userService.create(user);
+    } else {
+      this.userService.update(user);
     }
   }
 

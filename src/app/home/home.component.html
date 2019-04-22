@@ -1,3 +1,62 @@
-<p>
-  home works!
-</p>
+<section class="app-home">
+  <div class="app-home__container">
+    <nav class="app-home__nav">
+        <button mat-icon-button md-large mat-button (click)="drawer.toggle()">
+            <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
+          </button>
+      <div class="app-home__nav__title">GreenCar</div>
+    </nav>
+  </div>
+    <mat-drawer-container class="app-home__main" autosize>
+        <mat-drawer #drawer class="app-home__sidebar" mode="side">
+            <mat-list>
+                <h3 mat-subheader style="font-weight: bold">Menu</h3>
+                <mat-list-item *ngFor="let folder of folders">
+                  <mat-icon mat-list-icon>account_circle</mat-icon>
+                  <p mat-line showFiller (click)="selectMenuOption(folder.name)">{{folder.name}}</p>
+                  <p mat-line> {{ folder.description }} </p>
+                </mat-list-item>
+              </mat-list>
+        </mat-drawer>
+      
+        <div class="app-home__content">
+          <mat-card class="app-home__trip" *ngIf="!optionMenuSelected">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Current trip</mat-card-title>
+                <mat-card-subtitle>01/04/2019</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="assets/images/trip2.png" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec lobortis velit in nulla blandit rutrum. Curabitur aliquam luctus rhoncus.
+                    Vivamus semper nibh volutpat justo commodo facilisis.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+          </mat-card>
+          <mat-card class="app-home__trip" *ngIf="!optionMenuSelected">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Last trip</mat-card-title>
+                <mat-card-subtitle>21/03/2019</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="assets/images/trip1.png" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                    Morbi ullamcorper, risus non fringilla euismod, elit augue maximus dui, nec rhoncus neque eros eget ipsum.
+                    In aliquam tincidunt mollis. Curabitur sed ligula consequat, hendrerit ante ultrices, lobortis leo.
+                    Donec eu dui semper, rutrum mi ac, venenatis magna. Phasellus blandit cursus neque, ac hendrerit lectus mattis in. 
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+          </mat-card>
+        </div>
+      
+      </mat-drawer-container>
+</section>
